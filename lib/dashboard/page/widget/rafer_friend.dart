@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class ReferralPage extends StatefulWidget {
-  const ReferralPage({super.key});
+class ReferFriendsPage extends StatefulWidget {
+  const ReferFriendsPage({super.key});
 
   @override
-  State<ReferralPage> createState() => _ReferralPageState();
+  State<ReferFriendsPage> createState() => _ReferFriendsPageState();
 }
 
-class _ReferralPageState extends State<ReferralPage> {
+class _ReferFriendsPageState extends State<ReferFriendsPage> {
   final HomeCtrl homeCtrl = Get.find();
 
   @override

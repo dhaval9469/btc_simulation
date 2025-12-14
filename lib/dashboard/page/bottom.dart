@@ -1,6 +1,6 @@
 import 'package:btc_simulation/dashboard/page/home.dart';
 import 'package:btc_simulation/dashboard/page/leader.dart';
-import 'package:btc_simulation/dashboard/page/profile.dart';
+import 'package:btc_simulation/dashboard/page/setting.dart';
 import 'package:btc_simulation/dashboard/page/referral.dart';
 import 'package:btc_simulation/res/asset.dart';
 import 'package:btc_simulation/res/colors.dart';
@@ -18,7 +18,7 @@ class BottomPage extends StatefulWidget {
 }
 
 class _BottomPageState extends State<BottomPage> {
-  final pages = [const HomePage(), const ReferralPage(), const LeaderPage(), const ProfilePage()];
+  final pages = [const HomePage(), const ReferralPage(), const RewardPage(), const ProfilePage()];
 
   @override
   Widget build(BuildContext context) {

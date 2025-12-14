@@ -1,85 +1,3 @@
-import 'package:btc_simulation/dashboard/page/widget/flip_card.dart';
-import 'package:btc_simulation/res/colors.dart';
-import 'package:flutter/material.dart';
-
-import 'dart:math';
-
-class RewardPage extends StatefulWidget {
-  const RewardPage({super.key});
-
-  @override
-  State<RewardPage> createState() => _RewardPageState();
-}
-
-class _RewardPageState extends State<RewardPage> {
-  int coins = 0;
-  int flipsLeft = 5;
-  final Random _random = Random();
-
-  void _onFlip() {
-    if (flipsLeft == 0) return;
-
-    int reward = _random.nextInt(201);
-
-    setState(() {
-      coins += reward;
-      flipsLeft--;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColor.bg,
-      body: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-
-            /// Coin Counter
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-              decoration: BoxDecoration(color: Colors.deepPurple, borderRadius: BorderRadius.circular(20)),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(Icons.star, color: Colors.yellow),
-                  const SizedBox(width: 8),
-                  Text(coins.toString(), style: const TextStyle(color: Colors.white, fontSize: 20)),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
-            Text('FLIP LEFT : $flipsLeft', style: const TextStyle(color: Colors.white)),
-
-            const SizedBox(height: 20),
-
-            Expanded(
-              child: GridView.builder(
-                padding: const EdgeInsets.all(16),
-                itemCount: 12,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  crossAxisSpacing: 12,
-                  mainAxisSpacing: 12,
-                ),
-                itemBuilder: (_, index) {
-                  return FlipCard(
-                      canFlip: flipsLeft > 0,
-                      onFlip: _onFlip);
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/*
 import 'package:btc_simulation/dashboard/ctrl/home_ctrl.dart';
 import 'package:btc_simulation/res/asset.dart';
 import 'package:btc_simulation/res/colors.dart';
@@ -89,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class LeaderPage extends StatefulWidget {
-  const LeaderPage({super.key});
+class ConvertPage extends StatefulWidget {
+  const ConvertPage({super.key});
 
   @override
-  State<LeaderPage> createState() => _LeaderPageState();
+  State<ConvertPage> createState() => _ConvertPageState();
 }
 
-class _LeaderPageState extends State<LeaderPage> {
+class _ConvertPageState extends State<ConvertPage> {
   final HomeCtrl homeCtrl = Get.find();
 
   @override
@@ -254,4 +172,3 @@ class _LeaderPageState extends State<LeaderPage> {
     );
   }
 }
-*/

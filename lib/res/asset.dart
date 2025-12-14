@@ -21,6 +21,7 @@ class AppAsset {
   static const bitcoin = '$image/bitcoin.png';
   static const boostSpeed = '$image/boost_speed.png';
   static const trophy = '$image/trophy.png';
+  static const superCoin = '$image/super_coin.png';
 
 
 }
